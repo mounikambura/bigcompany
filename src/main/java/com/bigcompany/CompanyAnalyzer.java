@@ -92,7 +92,7 @@ public class CompanyAnalyzer {
     }
 
     // find employees who have more than 4 managers between them and the CEO
-    public List<ReportingLineIssue> findReportingLineCount() {
+    public List<ReportingLineIssue> findReporwitingLineCount() {
         List<ReportingLineIssue> result = new ArrayList<>();
 
         for (Employee e : employeeById.values()) {

@@ -75,7 +75,7 @@ public class Main {
 
         //employees with too many managers above them
         System.out.println("Employees with a reporting line that is too long:");
-        List<CompanyAnalyzer.ReportingLineIssue> longLines = analyzer.findReportingLineCount();
+        List<CompanyAnalyzer.ReportingLineIssue> longLines = analyzer.findReporwitingLineCount();
         if (longLines.isEmpty()) {
             System.out.println("  None found.");
         } else {

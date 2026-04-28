@@ -99,7 +99,7 @@ public class CompanyAnalyzerTest {
         );
         CompanyAnalyzer analyzer = new CompanyAnalyzer(employees);
         assertTrue("Employee with exactly 4 managers above should not be flagged",
-                analyzer.findReportingLineCount().isEmpty());
+                analyzer.findReporwitingLineCount().isEmpty());
     }
 
     @Test
@@ -116,7 +116,7 @@ public class CompanyAnalyzerTest {
                 emp(7, "Emp", "Worker", 40_000, 6)
         );
         CompanyAnalyzer analyzer = new CompanyAnalyzer(employees);
-        List<CompanyAnalyzer.ReportingLineIssue> issues = analyzer.findReportingLineCount();
+        List<CompanyAnalyzer.ReportingLineIssue> issues = analyzer.findReporwitingLineCount();
         assertEquals(1, issues.size());
         assertEquals(7, issues.get(0).employee.getId());
         assertEquals(1, issues.get(0).excess);
@@ -128,7 +128,7 @@ public class CompanyAnalyzerTest {
                 emp(1, "Solo", "CEO", 100_000, null)
         );
         CompanyAnalyzer analyzer = new CompanyAnalyzer(employees);
-        assertTrue(analyzer.findReportingLineCount().isEmpty());
+        assertTrue(analyzer.findReporwitingLineCount().isEmpty());
     }
 
     @Test
@@ -162,6 +162,6 @@ public class CompanyAnalyzerTest {
         assertTrue(analyzer.findOverpaidManagers().isEmpty());
 
         // Reporting lines: deepest is Brett → depth = 3 (CEO→Martin→Alice→Brett) → 3 managers → OK
-        assertTrue(analyzer.findReportingLineCount().isEmpty());
+        assertTrue(analyzer.findReporwitingLineCount().isEmpty());
     }
 }
